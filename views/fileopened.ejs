@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+  <div id="main">
+    <div id="overlay">
+      <div id="updatecard">
+        <h2>Change file name</h2>
+        <form id="renameform" action="/update" method="get">
+          <input id="renameinput" type="text" name="newname">
+          <input id="renamebtn" type="submit" value="rename">
+        </form>
+        <button id="closebtn">Close</button>
+      </div>
+    </div>
+    <div id="left">
+      <div id="icons">
+        <i class="ri-file-line"></i>
+        <i class="ri-search-line"></i>
+        <i class="ri-git-branch-line"></i>
+        <i class="ri-settings-3-line"></i>
+      </div>
+      <div id="filepanel">
+        <div class="top1">
+          <h4>EXPLORER</h4>
+          <h4 class="dots">...</h4>
+        </div>
+        <div class="top2">
+          <h3>VSCODE</h3>
+          <div class="icons">
+            <i id="newfile" class="ri-file-add-line"></i>
+            <i id="newfolder" class="ri-folder-add-line"></i>
+            <i class="ri-refresh-line"></i>
+  
+          </div>
+        </div>
+        <div class="files">
+          <form id="form" action="/newfile" method="get">
+            <input type="text" placeholder="filename" name="filename">
+          </form>
+          <form id="form3" action="/newfolder" method="get">
+            <input type="text" placeholder="Enter folder name" name="foldername">
+          </form>
+          <%files.forEach(function(file){%>
+            <div class="filename">
+              <%if(file.isDirectory()){%>
+                <i class="ri-folder-line"></i>
+             <% }else{%>
+              <i class="ri-file-line"></i>
+             <%}%>
+              <div class="file">
+                <%if(file.isDirectory()){%>
+                  <h3><%=file.name%></h3>
+
+                <%}else{%>
+                  <h3><a href="/fileopened/<%=file.name%>"><%=file.name%></a></h3>
+               <% }%>
+                <div class="fileicons">
+                    <i data-placeholder="<%=file.name%>" id="editicon" class="ri-edit-line"></i>
+                    
+                  <%if(file.isDirectory()){%>
+                    <a class="deleteicon" href="/delete/folder/<%=file.name%>"><i class="ri-delete-bin-line"></i></a>
+                 <% }else{%>
+                  <a class="deleteicon" href="/delete/file/<%=file.name%>"><i class="ri-delete-bin-line"></i></a>
+
+                <% }%>
+                </div>
+              </div>
+            </div>
+            
+          <%})%>
+          
+        </div>
+      </div>
+    </div>
+    <div id="right">
+      <div id="top">
+        <div id="filetab">
+          <h3><%=nameoffile%></h3>
+          
+        </div>
+            <input id="savebtn" type="submit" value="save">
+
+
+        
+      </div>
+      <form id="saveform" action="/save/<%=nameoffile%>" method="get">
+        <textarea  name="codearea" id="codetext"><%=filedata%></textarea>
+      </form>
+    </div>
+  </div>
+  <script src="../javascripts/script.js"></script>
+</body>
+</html>

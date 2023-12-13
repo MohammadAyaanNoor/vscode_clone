@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: montserrat;
+    
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#main{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+#left{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+#icons{
+  width: 20%;
+  height: 100%;
+  background-color:rgb(51 51 51) ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4vw;
+  padding-top: 1vw;
+}
+#icons i{
+  font-size: 2.4vw;
+}
+#filepanel{
+  height: 100%;
+  width: 90%;
+  background-color: rgb(37 37 38);
+}
+.top1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1vw;
+  padding: 1vw 1vw;
+  background-color: rgb(37 37 38);
+}
+.dots{
+  font-size: 2vw;
+  margin-top: -1vw;
+}
+.top2{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3vw 1vw;
+}
+.top2 .icons{
+  display: flex;
+  align-items: center;
+  gap: 0.2vw;
+  display: none;
+}
+.top2:hover .icons{
+  display: initial;
+}
+.top2:hover{
+background-color: rgba(51, 51, 52, 0.951);
+}
+.icons i{
+  font-size: 1.3vw;
+}
+.files{
+  margin-top: 1vw;
+  
+}
+.file{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1vw;
+  width: 100%;
+
+
+}
+.file h3{
+  margin-left: 0.5vw;
+}
+.file:hover{
+  background-color: rgba(51, 51, 52, 0.951);
+  }
+.file i{
+  font-size: 1.3vw;
+  display: none;
+}
+.file:hover .fileicons i{
+  display: initial;
+}
+#right{
+  background-color: rgb(47, 47, 48);
+  height: 100%;
+  width: 70%;
+  position: relative;
+
+}
+.filename{
+  display: flex;
+  align-items: center;
+  padding-left: 1.3vw;
+}
+input{
+  color: white;
+  background-color:transparent;
+  border: 0.2vw solid rgb(40, 61, 138);
+  padding: 0.5vw 0.7vw;
+  outline: none;
+
+}
+#form{
+  display: none;
+  padding-left: 2.8vw;
+  
+}
+
+#editbtn form{
+display: none;
+}
+#form2 input{
+  color: white;
+  background-color:transparent;
+  border: 0.2vw solid rgb(40, 61, 138);
+  padding: 0.5vw 0.7vw;
+  outline: none;
+}
+#form2 button{
+  border: 0.2vw solid rgb(40, 61, 138);
+  background-color: transparent;
+  color: white;
+  padding: 0.5vw 0.6vw;
+  margin-left: 0.5vw;
+}
+#form3{
+  display: none;
+}
+#filetab{
+  padding: 1vw 2vw ;
+  background-color: rgb(49, 43, 43);
+ 
+}
+#top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgb(38, 32, 32);
+  padding: 0.8vw 1.2vw ;
+}
+#overlay{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.393);
+  backdrop-filter: blur(2px);
+  display: none;
+
+}
+#updatecard{
+  background-color: white;
+  width: 35vw;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1vw;
+  gap: 2vw;
+  padding: 2vw 0vw;
+}
+#updatecard h2{
+  color: black;
+}
+#renameform{
+  display: flex;
+  gap: 4vw;
+}
+
+#renameform #renameinput{
+  border: 0.1vw solid rgba(52, 49, 49, 0.379);
+  outline: none;
+  border-radius: 0.4vw;
+  width: 15vw;
+  color: black;
+
+}
+
+#renamebtn{
+  border: none;
+  background-color: rgb(66, 201, 249);
+  color: rgb(253, 253, 253);
+  padding: 1vw 2vw ;
+  border-radius: 0.4vw;
+  font-size: 1.2vw ;
+
+}
+#closebtn{
+  background-color: rgb(221, 27, 27);
+  color: white;
+  padding: 1vw 2vw ;
+  border-radius: 0.4vw;
+  font-size: 1.2vw ;
+  border: none;
+}
+textarea{
+  width: 100%;
+  height: 90.5%;
+  color: black;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 1vw 2vw;
+  color: white;
+}
+#savebtn{
+  border: none;
+  background-color: rgb(28, 146, 205);
+  color: rgb(250, 246, 246);
+  font-size: 1.2vw;
+  border-radius: 0.4vw;
+  
+}
+a{
+  text-decoration: none;
+}
